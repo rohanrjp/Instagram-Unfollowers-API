@@ -1,0 +1,4 @@
+venv
+api/__pycache__/__init__.cpython-311.pyc
+api/__pycache__/route.cpython-311.pyc
+api/__pycache__/services.cpython-311.pyc
