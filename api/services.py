@@ -10,6 +10,7 @@ def parse_following_file(data):
 def parse_followers_file(data):
     username_list = set()
     
+    #for each entry in the input_data
     for entry in data:
         for item in entry.get("string_list_data", []):
             username_list.add(item["value"])
