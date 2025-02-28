@@ -2,7 +2,7 @@ from fastapi import FastAPI, status, UploadFile
 import json
 from api.services import parse_followers_file, parse_following_file
 
-app = FastAPI(title="Unfollowers for Instagram",version="1.0",description="Simple API that finds out your unfollowers")
+app = FastAPI(title="Unfollowers for Instagram",version="1.0",description="Simple API that finds out your unfollowers",summary="Checks the followers and following JSON files fetched from Instagram")
 
 @app.post("/analyze", status_code=status.HTTP_200_OK)
 async def analyze(followers_file: UploadFile, following_file: UploadFile):
