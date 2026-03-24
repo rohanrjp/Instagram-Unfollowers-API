@@ -1,0 +1,25 @@
+# Makefile for Instagram Unfollowers API
+
+# Virtual environment activation (optional)
+VENV = venv
+
+# Python executable in virtualenv
+PYTHON = $(VENV)/bin/python
+
+# Uvicorn command
+UVICORN = $(PYTHON) -m uvicorn api.route:app --reload
+
+.PHONY: run install clean
+
+# Run the FastAPI server
+run:
+	$(UVICORN)
+
+# Install dependencies
+install:
+	pip install -r requirements.txt
+
+# Clean pycache and temporary files
+clean:
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	find . -type d -name "*.egg-info" -exec rm -rf {} +
